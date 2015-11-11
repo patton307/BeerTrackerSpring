@@ -6,6 +6,22 @@
 </head>
 <body>
 
+<a href="/">All</a>
+<a href="/?type=Ale">Ale</a>
+<a href="/?type=Lager">Lager</a>
+<a href="/?type=Pilsner">Pilsner</a>
+<a href="/?type=Stout">Stout</a>
+<a href="/?type=Other">Others</a>
+
+<br><br>
+
+<form action="/" method="get">
+    <input type="text" placeholder="Search" name="search"/>
+    <button type="submit">Search</button>
+</form>
+
+<br><br>
+
 <form action="add-beer" method="post">
     <input type="text" placeholder="Beer name" name="beername"/>
     <select name="beertype">
@@ -15,12 +31,13 @@
         <option value="Stout">Stout</option>
         <option value="Other">Other</option>
     </select>
+    <input type="number" placeholder="Calories" name="beercalories"/>
     <button type="submit">Submit</button>
 </form>
 
 {{#beers}}
 
-{{id}}.  {{name}} - {{type}} <br>
+{{name}} - {{type}} {{calories}} <br>
 
 {{/beers}}
 
