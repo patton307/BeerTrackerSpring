@@ -64,7 +64,7 @@ public class BeerTrackerController {
     }
 
     @RequestMapping("/add-beer")
-    public String addBeer(String beername, String beertype, int beercalories, HttpSession session) throws Exception {
+    public String addBeer(String beername, String beertype, Integer beercalories, HttpSession session) throws Exception {
         if (session.getAttribute("username") == null) {
             throw new Exception("Not logged in");
         }
